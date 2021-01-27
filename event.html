@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>event</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- id Selector -->
+    <script>
+        $(document).ready(function () {
+            // event click
+            $(".tombol1").click(function () {
+                $(this).hide();
+            })
+
+            // focus & blur
+            $("input").focus(function () {
+                $(this).css("background-color", "green")
+            })
+            $("input").blur(function () {
+                $(this).css("background-color", "blue")
+            })
+
+            //  manipulation css elemen hr
+            $("hr").css({ "background-color": "black", "height": "2px" })
+
+            // EFFECTS hide, show, toggle
+            $(".hide").click(function(){
+                $(".paragrafSec3").hide();
+            })
+            $(".show").click(function () {
+                $(".paragrafSec3").show();
+            })
+
+            // slideUp, slideDown, slideToggle
+            $(".flip").css({"background-color": "blue", "border-radius": "25px", "color": "white"})
+            $(".flip").click(function(){
+                $(".panel").slideToggle("slow")
+            })
+
+            // get text html
+            $(".btn1").click(function(){
+                alert("Text: "+ $(".get").text())
+            })
+            $(".btn2").click(function(){
+                alert("HTML " + $(".get").html())
+            })
+
+            // get value
+            $(".showValue").click(function(){
+                alert("Value: " + $(".mickey").val())
+            })
+
+            // set text, html, value
+            $(".btnSet1").click(function(){
+                $(".set1").text("Lorem Ipsum")
+            })
+            $(".btnSet2").click(function(){
+                $(".set2").html("<b>Lorem Ipsum</b>")
+            })
+            $(".btnSet3").click(function(){
+                $(".set3").val("Dolly Duck")
+            })
+        })
+    </script>
+</head>
+
+<body>
+
+
+    <h2>Event Click</h2>
+    <p>Ini adalah Paragraf</p>
+    <p>Ini adalah paragraf yang lain</p>
+
+    <button class="tombol1">Click Tombol Ini maka tombol ini akan hilang</button>
+    </head>
+    <hr>
+
+    <h2>Event Focus & Blur</h2>
+    Name: <input type="text"><br>
+    NIM: <input type="text">
+    <hr>
+
+    <h2>Effects hide, show, toggle</h2>
+    <p class="paragrafSec3">Paragraf yang akan hilang dan dapat ditampilkan lagi</p>
+    <button class="hide">HIDE THE PARAGRAPH!</button>
+    <button class="show">SHOW THE PARAGRAPH!</button>
+    <hr>
+
+    <h2>slideUp, slideDown, slideToggle</h2>
+    <div class="flip">Klik untuk slide panel dibawah untuk slide down atau slide up</div>
+    <div class="panel">INI PANEL</div>
+    <hr>
+
+    <h2>GET content - text, html</h2>
+    <p class="get">Ini adalah sebagian <b>bold</b> teks didalam paragraf</p>
+    <button class="btn1">Show Text</button>
+    <button class="btn2">Show HTML</button>
+    <br>
+
+    <h2>Get value</h2>
+    <p>Name: <input type="text" class="mickey" value="Mickey Mouse"></p>
+    <button class="showValue">Show Value</button>
+    <br>
+
+    <h2>SET</h2>
+    <p class="set1">Ini adalah paragraf</p>
+    <p class="set2">Ini adalah paragraf lain</p>
+    <p>Input field: <input type="text" class="set3" value="value Inputnya"></p>
+
+    <button class="btnSet1">Set Text</button>
+    <button class="btnSet2">Set HTML</button>
+    <button class="btnSet3">Set Value</button>
+</body>
+
+</html>
